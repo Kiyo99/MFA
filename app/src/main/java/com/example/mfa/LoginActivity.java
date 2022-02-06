@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //This redirects if the user isnt null, to make sure the user is always signed in
         if (firebaseUser!=null){
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, DestinationActivity.class));
             finish();
         }
     }
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (task.isSuccessful()){
                                         pd.dismiss();
                                         Intent intent;
-                                        intent = new Intent(LoginActivity.this, MainActivity.class);
+                                        intent = new Intent(LoginActivity.this, DestinationActivity.class);
                                         startActivity(intent);
                                     }
                                     else{
