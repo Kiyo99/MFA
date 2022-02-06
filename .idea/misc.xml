@@ -4,9 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/drawable/camera.xml" value="0.1" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/drawable/ic_money.xml" value="0.1445" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/drawable/ic_undraw_click_here_re_y6uq.xml" value="0.1445" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/drawable/ic_undraw_credit_card_re_blml.xml" value="0.1445" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/drawable/ic_undraw_gift_re_qr17.xml" value="0.1445" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/drawable/ic_undraw_gifts_re_97j6.xml" value="0.1445" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_destination.xml" value="0.25" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_donate.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/TECH-PLUG/AndroidStudioProjects/MFA/app/src/main/res/layout/activity_stories.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
