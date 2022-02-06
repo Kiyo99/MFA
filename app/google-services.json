@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "335378374288",
+    "project_id": "mfra-b1fae",
+    "storage_bucket": "mfra-b1fae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335378374288:android:78a6bff549fe24c383c215",
+        "android_client_info": {
+          "package_name": "com.example.mfa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335378374288-lu10vn7o418uv4ltoure7tv8149gqhs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQIBPEcOOUx8-DfoN36xapB7XXERVDbkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335378374288-lu10vn7o418uv4ltoure7tv8149gqhs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
