@@ -9,7 +9,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView myMessages, stories, settings, donate;
+    CardView myMessages, stories, settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
         myMessages = findViewById(R.id.myMessages);
         stories = findViewById(R.id.stories);
-        donate = findViewById(R.id.donate);
         settings = findViewById(R.id.settings);
 
 
@@ -43,14 +42,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        donate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DonateActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MFA</string>
+
+   <string-array name="Sections">
+
+       <item>Education</item>
+       <item>Business</item>
+       <item>Medical</item>
+       <item>Orphan</item>
+
+   </string-array>
 </resources>
