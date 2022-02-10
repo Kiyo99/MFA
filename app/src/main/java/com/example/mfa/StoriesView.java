@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -120,6 +121,15 @@ public class StoriesView extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onItemClicked(storiesClass storiesClass) {
 
-        Toast.makeText(this, storiesClass.getProblemDetail(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, storiesClass.getProblemDetail(), Toast.LENGTH_SHORT).show();
+        Intent emma = new Intent(StoriesView.this, DetailedView.class);
+
+        emma.putExtra("title", storiesClass.getProblemTitle());
+        emma.putExtra("detail", storiesClass.getProblemDetail());
+        emma.putExtra("price", storiesClass.getProblemPrice());
+        emma.putExtra("image", storiesClass.getProblemImage());
+        emma.putExtra("desc", storiesClass.getProblemDesc());
+
+        startActivity(emma);
     }
 }

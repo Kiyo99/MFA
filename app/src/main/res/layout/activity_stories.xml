@@ -51,6 +51,7 @@
                     android:background="@drawable/edittext_background"
                     android:hint="Your problem's title"
                     android:inputType="text"
+                    android:maxLength="50"
                     android:padding="10dp"
                     android:singleLine="true"
                     android:textColor="@color/black"
@@ -68,8 +69,30 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/edittext_background"
-                    android:hint="Description of your problem"
+                    android:hint="Brief description of your problem"
                     android:inputType="text"
+                    android:maxLength="50"
+                    android:padding="10dp"
+                    android:singleLine="false"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/problemDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Detailed description of your problem"
+                    android:inputType="textMultiLine"
+                    android:gravity="top|left"
+                    android:minLines="3"
                     android:padding="10dp"
                     android:singleLine="false"
                     android:textColor="@color/black"
@@ -118,6 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/green_oval"
                 android:text="Upload"
                 android:textColor="@color/white" />

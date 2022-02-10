@@ -45,7 +45,7 @@ import static android.content.ContentValues.TAG;
 public class StoriesActivity extends AppCompatActivity {
 
     Button upload;
-    EditText problemTitle, problemDescription, problemPrice;
+    EditText problemTitle, problemDescription, problemPrice, problemDetail;
     ImageView problemImage;
     Uri imageUri;
     FirebaseStorage storage;
@@ -72,6 +72,7 @@ public class StoriesActivity extends AppCompatActivity {
         problemTitle = findViewById(R.id.problemTitle);
         problemDescription = findViewById(R.id.problemDescription);
         problemPrice = findViewById(R.id.problemPrice);
+        problemDetail = findViewById(R.id.problemDetail);
         problemImage = findViewById(R.id.problemImage);
         upload = findViewById(R.id.upload);
 
@@ -99,22 +100,23 @@ public class StoriesActivity extends AppCompatActivity {
                 String str_pTitle = problemTitle.getText().toString();
                 String str_pDesc = problemDescription.getText().toString();
                 String str_pPrice = problemPrice.getText().toString();
+                String str_pDetail = problemDetail.getText().toString();
 
-                if (TextUtils.isEmpty(str_pTitle) || TextUtils.isEmpty(str_pDesc)
-                        || TextUtils.isEmpty(str_pPrice)) {
+                if (TextUtils.isEmpty(str_pTitle) || TextUtils.isEmpty(str_pDetail)
+                        || TextUtils.isEmpty(str_pDesc) || TextUtils.isEmpty(str_pPrice)) {
                     pd.dismiss();
                     Toast.makeText(StoriesActivity.this, "All fields are required!", Toast.LENGTH_SHORT).show();
                 } else if (imageChecker == null) {
                     pd.dismiss();
                     Toast.makeText(StoriesActivity.this, "Please upload an image first", Toast.LENGTH_SHORT).show();
                 } else {
-                    savetoDatabase(str_pTitle, problemType, str_pDesc, str_pPrice, downloadUri);
+                    savetoDatabase(str_pTitle, problemType, str_pDesc, str_pPrice, str_pDetail, downloadUri);
                 }
             }
         });
     }
 
-    private void savetoDatabase(String str_pTitle, String problemType, String str_pDesc, String str_pPrice, String downloadUri) {
+    private void savetoDatabase(String str_pTitle, String problemType, String str_pDesc, String str_pPrice, String str_pDetail, String downloadUri) {
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -130,6 +132,7 @@ public class StoriesActivity extends AppCompatActivity {
                         problem.put("problemTitle", str_pTitle);
                         problem.put("problemDesc", str_pDesc);
                         problem.put("problemPrice", str_pPrice);
+                        problem.put("problemDetail", str_pDetail);
                         problem.put("problemImage", downloadUri);
 
                         if (problemType.equalsIgnoreCase("Education")){
