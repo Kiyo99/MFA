@@ -3,13 +3,17 @@ package com.example.mfa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+
+import java.lang.reflect.Array;
 
 public class DetailedView extends AppCompatActivity {
 
@@ -56,5 +60,26 @@ public class DetailedView extends AppCompatActivity {
                 startActivity(emma);
             }
         });
+
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String mail[] = {"zackwoods999@gmail.com"};
+//               composeEmail(mail, "Donation Inquiry from MFA");
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, mail);
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Donation Inquiry from MFA");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I have viewed your profile and I am interested in your situation. Reply me as soon as you can");
+
+                try {
+                    startActivity(emailIntent);
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(DetailedView.this,
+                            "Email app not installed.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
 }
