@@ -16,19 +16,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myMessages = findViewById(R.id.myMessages);
+//        myMessages = findViewById(R.id.myMessages);
         stories = findViewById(R.id.stories);
         settings = findViewById(R.id.settings);
 
 
 
-        myMessages.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
-                startActivity(intent);
-            }
-        });
+//        myMessages.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         stories.setOnClickListener(new View.OnClickListener() {
             @Override

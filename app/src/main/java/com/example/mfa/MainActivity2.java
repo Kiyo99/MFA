@@ -16,19 +16,19 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        myMessages = findViewById(R.id.myMessages);
+        //myMessages = findViewById(R.id.myMessages);
         viewStories = findViewById(R.id.viewStories);
         settings = findViewById(R.id.settings);
 
 
 
-        myMessages.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity2.this, MessagesActivity.class);
-                startActivity(intent);
-            }
-        });
+//        myMessages.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity2.this, MessagesActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         viewStories.setOnClickListener(new View.OnClickListener() {
             @Override
