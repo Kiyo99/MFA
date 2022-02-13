@@ -129,6 +129,8 @@ public class StoriesView extends AppCompatActivity implements AdapterView.OnItem
         emma.putExtra("price", storiesClass.getProblemPrice());
         emma.putExtra("image", storiesClass.getProblemImage());
         emma.putExtra("desc", storiesClass.getProblemDesc());
+        emma.putExtra("email", storiesClass.getEmail());
+        emma.putExtra("fullname", storiesClass.getFullname());
 
         startActivity(emma);
     }

@@ -126,6 +126,11 @@ public class StoriesActivity extends AppCompatActivity {
                     if (document.exists()) {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         String ID = document.getString("User ID");
+                        String email = document.getString("email");
+                        String lname = document.getString("Last name");
+                        String fname = document.getString("First name");
+                        String fullname = lname + " " + fname;
+
 
 
                         Map<String, Object> problem = new HashMap<>();
@@ -133,6 +138,9 @@ public class StoriesActivity extends AppCompatActivity {
                         problem.put("problemDesc", str_pDesc);
                         problem.put("problemPrice", str_pPrice);
                         problem.put("problemDetail", str_pDetail);
+                        problem.put("email", email);
+                        problem.put("ID", ID);
+                        problem.put("fullname", fullname);
                         problem.put("problemImage", downloadUri);
 
                         if (problemType.equalsIgnoreCase("Education")){
@@ -142,6 +150,7 @@ public class StoriesActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull @NotNull Task<DocumentReference> task) {
                                     pd.dismiss();
                                     Toast.makeText(StoriesActivity.this, "Successfully uploaded your problem", Toast.LENGTH_SHORT).show();
+                                    finish();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override

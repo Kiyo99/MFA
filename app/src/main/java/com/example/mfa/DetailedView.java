@@ -17,7 +17,7 @@ import java.lang.reflect.Array;
 
 public class DetailedView extends AppCompatActivity {
 
-    TextView name, condition, detailedDesc, price;
+    TextView fullname, name, condition, detailedDesc, price;
     ImageView image;
     Button donate, chat;
 
@@ -27,6 +27,7 @@ public class DetailedView extends AppCompatActivity {
         setContentView(R.layout.activity_detailed_view);
 
         name = findViewById(R.id.name);
+        fullname = findViewById(R.id.fullname);
         condition = findViewById(R.id.condition);
         detailedDesc = findViewById(R.id.dView);
         chat = findViewById(R.id.chat);
@@ -34,7 +35,7 @@ public class DetailedView extends AppCompatActivity {
         image = findViewById(R.id.image);
         donate = findViewById(R.id.buy);
 
-        String title, desc, detail, pricee, imagee;
+        String title, desc, detail, pricee, imagee, fullnamee;
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -44,8 +45,10 @@ public class DetailedView extends AppCompatActivity {
             detail = extras.getString("detail");
             pricee = extras.getString("price");
             imagee = extras.getString("image");
+            fullnamee= extras.getString("fullname");
 
             name.setText(title);
+            fullname.setText(fullnamee);
             condition.setText(desc);
             detailedDesc.setText(detail);
             price.setText(pricee);
@@ -64,19 +67,24 @@ public class DetailedView extends AppCompatActivity {
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String mail[] = {"zackwoods999@gmail.com"};
-//               composeEmail(mail, "Donation Inquiry from MFA");
-                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                emailIntent.setData(Uri.parse("mailto:"));
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, mail);
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Donation Inquiry from MFA");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I have viewed your profile and I am interested in your situation. Reply me as soon as you can");
+                Intent getmail = getIntent();
+                Bundle extras = getmail.getExtras();
+                if(extras != null) {
+                    String email = extras.getString("email");
 
-                try {
-                    startActivity(emailIntent);
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(DetailedView.this,
-                            "Email app not installed.", Toast.LENGTH_SHORT).show();
+                    String mail[] = {email};
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                    emailIntent.setData(Uri.parse("mailto:"));
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL, mail);
+                    emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Donation Inquiry from MFA");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I have viewed your profile and I am interested in your situation. Reply me as soon as you can");
+
+                    try {
+                        startActivity(emailIntent);
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(DetailedView.this,
+                                "Email app not installed.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

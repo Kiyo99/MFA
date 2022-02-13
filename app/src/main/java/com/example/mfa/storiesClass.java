@@ -7,9 +7,19 @@ public class storiesClass {
     String problemPrice;
     String problemImage;
     String problemDetail;
+    String email;
+    String fullname;
+
+    public String getFullname() {
+        return fullname;
+    }
 
     public String getProblemDetail() {
         return problemDetail;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public String getProblemTitle() {
